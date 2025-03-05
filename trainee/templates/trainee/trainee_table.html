@@ -1,0 +1,31 @@
+{% extends "trainee/layout.html" %}
+
+{% block title %}
+trainetable
+{% endblock %}
+
+{% block body %}
+<div class="m-5">
+
+<table class="table border">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Assigned Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for trainee, course in trainee_course_lists %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ trainee }}</td>
+            <td>{{ course }}</td>
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+
+</div>
+{% endblock %}

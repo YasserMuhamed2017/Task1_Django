@@ -1,0 +1,15 @@
+{% extends "trainee/layout.html" %}
+
+{% block title %}
+trainelist
+{% endblock %}
+
+{% block body %}
+
+<ul class="list-group m-5">
+    <h1>List of trainees:</h1>
+    {% for trainee in trainees %}
+    <li class="list-group-item">{{ trainee }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

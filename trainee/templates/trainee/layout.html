@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>{% block title %}Layout{% endblock %}</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between">
+            <div class="p-4 bg-primary text-white flex-fill text-center">
+                <h2>Trainee</h2>
+                <p>Details about the trainee.</p>
+            </div>
+    
+            <div class="p-4 bg-success text-white flex-fill text-center">
+                <h2>Course</h2>
+                <p>Details about the course.</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-5">
+        <a href="{% url 'register' %}" class="btn btn-primary">Go to Register Page</a>
+        <a href="{% url 'login' %}" class="btn btn-primary m-1">Go to Login Page</a>
+        <a href="{% url 'logout' %}" class="btn btn-primary m-1">Go to Logout Page</a>
+        <a href="{% url 'traineelist' %}" class="btn btn-primary m-1">Go to trainee list Page</a>
+        <a href="{% url 'traineetable' %}" class="btn btn-primary m-1">Go to trainee table Page</a>
+        <a href="{% url 'add_trainee' %}" class="btn btn-primary m-1">Add Trainee Page</a>
+        <a href="{% url 'course' %}" class="btn btn-primary m-1">Go to course list Page</a>
+        <a href="{% url 'add_course' %}" class="btn btn-primary m-1">Add A Course</a>
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>
