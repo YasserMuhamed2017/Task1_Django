@@ -5,11 +5,12 @@ Add A Course
 {% endblock %}
 
 {% block body %}
-<form class="m-5">
+<form class="m-5" action="{% url 'course' %}" method="post">
+    {% csrf_token %}
     <div class="form-group">
         <label>Add Course</label>
         <input type="text" class="form-control"
-            placeholder="Enter Course">
+            placeholder="Enter Course" name="course">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

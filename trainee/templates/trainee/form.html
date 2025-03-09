@@ -5,11 +5,12 @@ Add A Trainee
 {% endblock %}
 
 {% block body %}
-<form class="m-5">
+<form class="m-5" action="{% url 'traineelist' %}" method="post">
+    {% csrf_token %}
     <div class="form-group">
         <label>Add Trainee</label>
         <input type="text" class="form-control"
-            placeholder="Enter Trainee">
+            placeholder="Enter Trainee" name="trainee">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -1,17 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .models import *
 # Create your views here.
 def home(request):
     return render(request, "trainee/layout.html")
 
-# It's a list of three trainees.
-lst = ['Yasser', 'Mohamed', 'Ahmed']
 
 def trainee_list(request):
-    return render(request, "trainee/trainee_list.html",
-    {
-        "trainees": lst
-    })
+    if request.method == "POST":
+        trainee_name = request.POST.get("trainee")
+        Trainee(trainee=trainee_name).save()
+    else:
+        return render(request, "trainee/trainee_list.html",
+        {
+            "trainees": Trainee.objects.all()
+        })
 
 def trainee_table(request):
     lst_courses = ['Django', 'Version Control', 'Python']
@@ -20,8 +23,12 @@ def trainee_table(request):
         "trainee_course_lists": two_combined_lists
     })
 
+def delete_trainee(request, trainee_id):
+    if request.method == 'POST':
+        Trainee.objects.get(id=trainee_id).delete()
+        return redirect("traineelist")
+
 def add_trainee(request):
-    
     return render(request, "trainee/form.html")
 
 def register(request):
