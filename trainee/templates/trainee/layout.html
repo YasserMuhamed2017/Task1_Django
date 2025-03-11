@@ -21,16 +21,18 @@
             </div>
         </div>
     </div>
-    <div class="m-5">
-        <a href="{% url 'register' %}" class="btn btn-primary">Go to Register Page</a>
-        <a href="{% url 'login' %}" class="btn btn-primary m-1">Go to Login Page</a>
-        <a href="{% url 'logout' %}" class="btn btn-primary m-1">Go to Logout Page</a>
-        <a href="{% url 'traineelist' %}" class="btn btn-primary m-1">Go to trainee list Page</a>
-        <a href="{% url 'traineetable' %}" class="btn btn-primary m-1">Go to trainee table Page</a>
-        <a href="{% url 'add_trainee' %}" class="btn btn-primary m-1">Add Trainee Page</a>
-        <a href="{% url 'course' %}" class="btn btn-primary m-1">Go to course list Page</a>
-        <a href="{% url 'add_course' %}" class="btn btn-primary m-1">Add A Course</a>
+    <div class="d-flex flex-wrap justify-content-center m-5">
+        <a href="{% url 'register' %}" class="btn btn-primary mx-2">Go to Register Page</a>
+        <a href="{% url 'login' %}" class="btn btn-primary mx-2">Go to Login Page</a>
+        <a href="{% url 'logout' %}" class="btn btn-primary mx-2">Go to Logout Page</a>
+        <a href="{% url 'traineelist' %}" class="btn btn-primary mx-2">Go to Trainee List Page</a>
+        <a href="{% url 'traineetable' %}" class="btn btn-primary mx-2">Go to Trainee Table Page</a>
+        <a href="{% url 'add_trainee' %}" class="btn btn-primary mx-2">Add Trainee Page</a>
+        <a href="{% url 'course' %}" class="btn btn-primary mt-3">Go to Course List Page</a>
+        <a href="{% url 'add_course' %}" class="btn btn-primary mt-3 ml-3">Add A Course</a>
     </div>
+    
+    
     {% block body %}{% endblock %}
 </body>
 </html>

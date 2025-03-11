@@ -19,8 +19,8 @@ trainetable
         {% for trainee, course in trainee_course_lists %}
         <tr>
             <th scope="row">{{ forloop.counter }}</th>
-            <td>{{ trainee }}</td>
-            <td>{{ course }}</td>
+            <td>{{ trainee.trainee }}</td>
+            <td>{{ course.course }}</td>
         </tr>
         {% endfor %}
         

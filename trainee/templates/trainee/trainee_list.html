@@ -9,12 +9,21 @@ trainelist
 <ul class="list-group m-5">
     <h1>List of trainees:</h1>
     {% for trainee in trainees %}
-    <li class="list-group-item d-flex justify-content-between align-items-center">{{ trainee.trainee }}
-        <form action="{% url 'delete_trainee' trainee.id %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-        </form>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ trainee.trainee }}
+        
+        <div>
+            <!-- Update Button (Redirects to Update Page) -->
+            <a href="{% url 'update_trainee' trainee.id %}" class="btn btn-success btn-sm">Update</a>
+            
+            <!-- Delete Form -->
+            <form action="{% url 'delete_trainee' trainee.id %}" method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+        </div>
     </li>
+    
     {% endfor %}
 </ul>
 {% endblock %}

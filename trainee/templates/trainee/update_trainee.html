@@ -1,0 +1,13 @@
+{% extends "trainee/layout.html" %}
+
+{% block body %}
+<form class="m-5" action="{% url 'update_trainee' trainee_id %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="traineeName" class="fw-bold">Update Trainee</label>
+        <input type="text" class="form-control" value="{{ trainee_name }}" name="updated_trainee">
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+
+{% endblock %}
