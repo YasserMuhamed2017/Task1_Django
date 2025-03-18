@@ -5,15 +5,17 @@ Login
 {% endblock %}
 
 {% block body %}
-<!-- This form taken from bootstrap documentation-->
-<form class="m-5">
+
+<form class="m-5" method="post" action="{% url 'traineetable' %}">
+    <h3>Login</h3>
+  {% csrf_token %}
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <label for="exampleInputEmail1">Enter Username</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username" name="username">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

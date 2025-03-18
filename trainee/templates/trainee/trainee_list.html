@@ -13,6 +13,8 @@ trainelist
         {{ trainee.trainee }}
         
         <div>
+            <a href="{% url 'trainee-detail' trainee.id %}" class="btn btn-info btn-sm">Details</a>
+
             <!-- Update Button (Redirects to Update Page) -->
             <a href="{% url 'update_trainee' trainee.id %}" class="btn btn-success btn-sm">Update</a>
             
