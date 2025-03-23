@@ -9,6 +9,28 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views import View
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate, logout
+from rest_framework import generics
+from .serializers import *
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import viewsets
+
+class TrackViewSet(viewsets.ModelViewSet):
+    queryset = Trainee.objects.all()
+    serializer_class = TraineeSerializer
+
+@api_view(['GET'])
+def track_update(request):
+    return Response({"message": "Tracking updates!"})
+
+class TraineeListCreateView(generics.ListCreateAPIView):
+    queryset = Trainee.objects.all()
+    serializer_class = TraineeSerializer
+
+class TraineeRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Trainee.objects.all()
+    serializer_class = TraineeSerializer
+
 
 # Create your views here.
 def home(request):
